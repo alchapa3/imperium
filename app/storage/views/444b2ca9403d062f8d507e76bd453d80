@@ -1,0 +1,90 @@
+<?php $__env->startSection('title'); ?>
+  <title>Imperium | Home</title>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('style'); ?>
+  <link rel="stylesheet" type="text/css" href="/css/feed.css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/feed">HTK</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $user->name; ?> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>		
+
+<div class="container">
+  <div class="row-fluid">
+      <div class="col-md-4">
+          <div class="profile">
+              <img src="<?php echo $user->profile_pic; ?>">
+              <h1><?php echo $user->username; ?></h1>
+              <p><a href="/friends">Friends List</a></p>
+          </div>
+      </div>
+      <div class="col-md-8">
+          <div class="post-form">
+            <h4>Create New Post</h4>
+            <?php echo Form::open(['action' => 'PostController@createPost', 'method'=> 'POST', 'class' => "form"]); ?>
+
+              <div class="form-group">
+                <textarea name="content"></textarea>
+              </div>
+              <div class="form-group">
+                <?php echo Form::submit('Post',['class' => 'btn btn-primary']); ?>
+
+              </div>
+            <?php echo Form::close(); ?>
+
+          </div>
+          <div class="posts">
+              <?php foreach($posts as $post): ?>
+                <div class="post">
+                  <p><?php echo $post->fname; ?> posted on <?php echo $post->updated_at; ?></p>
+                  <blockquote><?php echo $post->content; ?></blockquote>
+                  
+                  <?php foreach($comments[$post->id] as $comment): ?>
+                    <div class="comment">
+                      <p><?php echo $comment->fname; ?> commented on <?php echo $comment->updated_at; ?></p>
+                      <p><?php echo $comment->comment; ?></p>
+                    </div>
+                  <?php endforeach; ?>
+                  <div class="comment-form">
+                        <?php echo Form::open(['action' => 'CommentsController@createComment', 'class' => 'form', 'method'=> 'POST']); ?>
+
+                          <div class="form-group">
+                            <textarea name="comment"></textarea>
+                          </div>
+                          <?php echo Form::hidden('PID', $post->id); ?>
+
+                          <div class="form-group">
+                            <?php echo Form::submit('Comment',['class' => 'btn btn-primary']); ?>
+
+                          </div>  
+                        <?php echo Form::close(); ?>
+
+                    </div>
+                </div>
+              <?php endforeach; ?>
+          </div>
+      </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
