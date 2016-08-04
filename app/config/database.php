@@ -54,11 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '104.131.18.69',
 			'database'  => getenv('DB_NAME'),//'htk',
 			'username'  => getenv('DB_USERNAME'),//'root',
 			'password'  => getenv('DB_PASSWORD'),//'',
-			'unix_socket'	=> '/tmp/mysql.sock',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
