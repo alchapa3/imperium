@@ -587,7 +587,7 @@
             "require": {
                 "classpreloader/classpreloader": "~1.0.2",
                 "d11wtq/boris": "~1.0",
-                "filp/whoops": "2.0.0@alpha",
+                "filp/whoops": "1.1.*",
                 "ircmaxell/password-compat": "~1.0",
                 "jeremeamia/superclosure": "~1.0.1",
                 "monolog/monolog": "~1.6",
