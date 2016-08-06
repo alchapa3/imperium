@@ -13,11 +13,22 @@ Route::get('/logout', 'AuthenticationController@logout');
 Route::get('/signup', 'RegistrationController@showSignUpView');
 Route::post('/signup', 'RegistrationController@signUp');
 
+Route::get('/newgoogleuser', 'GoogleController@showGoogleView');
+Route::post('/newgoogleuser', 'GoogleController@addGoogleUser');
+
 //Feed
 //Route::get('/feed', 'FeedController@showFeed');
 
 //Home
 Route::get('/feed', 'HomeController@showHome');
+
+//Buttons
+Route::post('/but1','ButtonController1@buttonCount1');
+Route::post('/but2','ButtonController2@buttonCount2');
+Route::post('/but3','ButtonController3@buttonCount3');
+Route::post('/but4','ButtonController4@buttonCount4');
+Route::post('/but5','ButtonController5@buttonCount5');
+
 
 //Post
 Route::post('/post', 'PostController@createPost');
@@ -31,8 +42,13 @@ Route::get('/users', 'AuthenticationController@showUsers');
 //Home
 Route::get('/','StartController@goThere');
 
-//
+//Google Auth
 Route::get('/gauth/{auth?}',"AuthenticationController@getGoogleLogin");
 
 //Trade
-Route::get('/trade','TradeController@showTradeView');
+Route::get('/market','MarketController@showMarketView');
+
+Route::get('/trade','MarketController@showTradeView');
+Route::post('/trade','MarketController@postTrade');
+
+
