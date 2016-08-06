@@ -60,11 +60,27 @@
 
 <table class="table striped-table">
 <tr>
-  <th >Iron <button type="button" class="btn btn-danger">+</button></th>
-  <th>Wood <button type="button" class="btn btn-success">+</button></th>
-  <th>Gold <button type="button" class="btn btn-warning">+</button></th>
-  <th>Food <button type="button" class="btn btn-danger">+</button></th>
-  <th>Water <button type="button" class="btn btn-primary">+</button></th>
+
+  {{Form::open(['action'=> 'ButtonController1@buttonCount1', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <th>Iron {{Form::submit('+', ['class' => 'btn btn-danger', 'id' => 'button1'])}}</th>
+  {{Form::close()}}
+
+  {{Form::open(['action'=> 'ButtonController2@buttonCount2', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <th>Wood {{Form::submit('+', ['class' => 'btn btn-success'])}}</th>
+  {{Form::close()}}
+  
+  {{Form::open(['action'=> 'ButtonController3@buttonCount3', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <th>Gold {{Form::submit('+', ['class' => 'btn btn-warning'])}}</th>
+  {{Form::close()}}
+
+  {{Form::open(['action'=> 'ButtonController4@buttonCount4', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <th>Food {{Form::submit('+', ['class' => 'btn btn-danger'])}}</th>
+  {{Form::close()}}
+
+  {{Form::open(['action'=> 'ButtonController5@buttonCount5', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <th>Water {{Form::submit('+', ['class' => 'btn btn-primary'])}}</th>
+  {{Form::close()}}
+  
 <tr>
   <td>0</td>
   <td>0</td>
@@ -93,8 +109,7 @@
 
 
   <div class=" form-group">
-      <a class="btn btn-danger btn-lg btn-block"  href="/feed" role="button" >Send to Market</a>
-      <a class="btn btn-danger btn-lg btn-block"  href="/feed" role="button">Shop at Market</a>
+      <a class="btn btn-danger btn-lg btn-block"  href="/market" role="button" >Market</a>
   </div>
 
 </div>
