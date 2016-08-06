@@ -50,15 +50,21 @@ class AuthenticationController extends \BaseController {
 		$oauth = new Hybrid_Auth(app_path(). '/config/google_auth.php');
 		$provider = $oauth->authenticate('Google');
 		$profile = $provider->getUserProfile();
+		$frprofile = User::where('email','=',$profile->email)->first();
 
 		//return $profile->email.'<a href="logout">Log Out</a>';
-		//return var_dump($profile); 
-		return User::create([
-			'email' => "$profile->email",
-			'username' => "$profile->firstName",
-			'password' => "$profile->identifier"
-			
-		]);
+		//return var_dump($profile);
+		if ($frprofile== null) { 
+			User::create([
+				'email' => "$profile->email",
+				'username' => "$profile->firstName"
+			]);
+
+			return Redirect::to('/newgoogleuser');
+		}
+
+		//return Redirect::to('/feed');
+		return "You are logged in!!";
 	}
 
 }

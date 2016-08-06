@@ -80,5 +80,6 @@ class RegistrationController extends \BaseController{
                 ->subject($email_data['subject']);
         });
 
-    */     
+    */   
+    
 }
