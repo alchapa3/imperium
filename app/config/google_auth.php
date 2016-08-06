@@ -1,6 +1,6 @@
 <?php
 	return array(
-		"base_url" => "http://localhost:8000/gauth/auth",
+		"base_url" => "http://conquerimperium.com/gauth/auth",
 		"providers" => array (
 			"Google" => array (
 				"enabled" => true,
