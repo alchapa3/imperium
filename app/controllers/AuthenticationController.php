@@ -29,7 +29,7 @@ class AuthenticationController extends \BaseController {
 	public function logout(){
 		Session::flush();
         Auth::logout();
-        return Redirect::to('/login');
+        return Redirect::to('/');
 	}
 
 	public function showUsers(){
@@ -51,20 +51,26 @@ class AuthenticationController extends \BaseController {
 		$provider = $oauth->authenticate('Google');
 		$profile = $provider->getUserProfile();
 		$frprofile = User::where('email','=',$profile->email)->first();
+		$password = 'goo39573202pw025sf023b5303t303FHshsFSSswivVXns3k3nf9';
 
 		//return $profile->email.'<a href="logout">Log Out</a>';
 		//return var_dump($profile);
 		if ($frprofile== null) { 
 			User::create([
 				'email' => "$profile->email",
-				'username' => "$profile->firstName"
+				'username' => "$profile->firstName",
+				'password' => Hash::make($password)
 			]);
 
-			return Redirect::to('/newgoogleuser');
-		}
 
-		//return Redirect::to('/feed');
-		return "You are logged in!!";
+			if (Auth::attempt(array('email' => $profile->email, 'password' => $password))){
+			return Redirect::to('/newgoogleuser');
+			}
+		
+		}else if (Auth::attempt(array('email' => $profile->email, 'password' => $password))){
+			return Redirect::to('/feed');
+			}
+
 	}
 
 }

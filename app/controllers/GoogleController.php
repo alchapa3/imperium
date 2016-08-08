@@ -7,13 +7,15 @@ class GoogleController extends \BaseController{
     }
 
     public function addGoogleUser(){
+    	$user = Auth::user();
+
     	$kingdom_name = Input::get('kingdom_name');
 
 		try{
 			
-			User::create([
-				'kingdom_name' => $kingdom_name
-			]);
+			DB::table('users')
+            ->where('email', $user->email)
+            ->update(['kingdom_name' => $kingdom_name]);
 
 		}catch(Exception $e){
 
