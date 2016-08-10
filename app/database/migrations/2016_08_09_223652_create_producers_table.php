@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKingdomTable extends Migration {
+class CreateProducersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,16 @@ class CreateKingdomTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('kingdom', function(Blueprint $table)
+		Schema::create('producers', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('KID');
 			$table->integer('UID');
-			$table->integer('iron_count');
-			$table->integer('wood_count');
-			$table->integer('gold_count');
-			$table->integer('food_count');
-			$table->integer('water_count');
-			$table->integer('population');
-			//$table->rememberToken();
+			$table->integer('smith');
+			$table->integer('lumbermill');
+			$table->integer('mine');
+			$table->integer('farm');
+			$table->integer('well');
 			//$table->timestamps();
 		});
 	}
@@ -34,7 +33,7 @@ class CreateKingdomTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('kingdom');
+		Schema::drop('producers');
 	}
 
 }

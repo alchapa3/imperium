@@ -15,6 +15,7 @@ class CreateButtonsTable extends Migration {
 		Schema::create('buttons', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('KID');
 			$table->integer('count');
 		
 		});
