@@ -34,23 +34,57 @@
 
 <div class="container">
   <div class="row-fluid">
-      <div class="col-md-8">
-          <!--div class="profile"-->
-              <!--img src="{{$username->profile_pic}}"-->
-               <h1>Trade</h1>
-          </div>
+    <div class="col-md-8">
+      <!--div class="profile"-->
+        <!--img src="{{$username->profile_pic}}"-->
+      <h1>Trade</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form-group">
+    <h3 class="text-center">What do you want?</h3>
+      <div class="col-sm-2">
+        Iron{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+        <br>
+        Wood{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+        <br>
+        Gold{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+        <br>
+        Food{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+        <br>
+        Water{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+      </div>  
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="form-group">
+      <h3 class="text-center">What are you offering?</h3>
+        <div class="col-sm-2">
+          Iron{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+          <br>
+          Wood{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+          <br>
+          Gold{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+          <br>
+          Food{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+          <br>
+          Water{{Form::text('iron_count', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control'])}}
+        </div>  
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class=" form-group">
+      <div class="col-md-5 col-sm-offset-4">
+        <a class="btn btn-danger btn-lg btn-block"  href="/market" role="button" >Post</a>
       </div>
-
-
-
-
-
-
-
-
-  <div class=" form-group">
-      <a class="btn btn-danger btn-lg btn-block"  href="/trade" role="button" >Post Trade</a>
+    </div>
   </div>
 
+  <br>
+  <p>
 </div>
 @stop

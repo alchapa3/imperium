@@ -31,26 +31,30 @@
   </div><!-- /.container-fluid -->
 </nav>		
 
-
 <div class="container">
   <div class="row-fluid">
-      <div class="col-md-8">
-          <!--div class="profile"-->
-              <!--img src="{{$username->profile_pic}}"-->
-               <h1>Market</h1>
-          </div>
-      </div>
-
-
-
-
-
-
-
-
-  <div class=" form-group">
-      <a class="btn btn-danger btn-lg btn-block"  href="/trade" role="button" >Trade</a>
+    <div class="col-md-8">
+      <!--div class="profile"-->
+      <!--img src="{{$username->profile_pic}}"-->
+      <h1>Market</h1>
+    </div>
   </div>
-
+  <p></p>
+    <div class="col-md-10">
+      <div class="container">
+        <div class="form-group">
+          <h3 class="text-center">Nothing In Market</h3>
+        </div>
+      </div>
+    </div>
+  <p></p>
+  <div class="container">
+    <div class=" form-group">
+      <div class="col-md-5 col-sm-offset-4">
+        <a class="btn btn-danger btn-lg btn-block"  href="/trade" role="button" >Trade in Market</a>
+      </div>
+    </div>
+  </div>
 </div>
+
 @stop
