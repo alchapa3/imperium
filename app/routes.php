@@ -29,6 +29,12 @@ Route::post('/but3','ButtonController3@buttonCount3');
 Route::post('/but4','ButtonController4@buttonCount4');
 Route::post('/but5','ButtonController5@buttonCount5');
 
+//Producer Buttons
+Route::post('/smith','SmithController@addSmith');
+Route::post('/mill','MillController@addMill');
+Route::post('/mine','MineController@addMine');
+Route::post('/farm','FarmController@addFarm');
+Route::post('/well','WellController@addWell');
 
 //Post
 Route::post('/post', 'PostController@createPost');
