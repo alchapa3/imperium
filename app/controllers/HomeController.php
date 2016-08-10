@@ -39,109 +39,38 @@ class HomeController extends BaseController {
 
 		$username = Auth::user();
 
-		//$kingdom_name = Post::where('kingdom_name', '=', $kingdom_name)->first();
+		$iron_count = DB::table('kingdom')->where('id', 1)->pluck('iron_count');
+		$wood_count = DB::table('kingdom')->where('id', 1)->pluck('wood_count');
+		$gold_count = DB::table('kingdom')->where('id', 1)->pluck('gold_count');
+		$food_count = DB::table('kingdom')->where('id', 1)->pluck('food_count');
+		$water_count = DB::table('kingdom')->where('id', 1)->pluck('water_count');
+
+		$smith = DB::table('producers')->where('id', 1)->pluck('smith');
+		$lumbermill = DB::table('producers')->where('id', 1)->pluck('lumbermill');
+		$mine = DB::table('producers')->where('id', 1)->pluck('mine');
+		$farm = DB::table('producers')->where('id', 1)->pluck('farm');
+		$well = DB::table('producers')->where('id', 1)->pluck('well');
 
 		$kingdom_name = Auth::user();
 
 		return View::make('home', [
 			'username' => $username,
-			'kingdom_name' => $kingdom_name
+			'kingdom_name' => $kingdom_name,
+			'iron_count' => $iron_count,
+			'wood_count' => $wood_count,
+			'gold_count' => $gold_count,
+			'food_count' => $food_count,
+			'water_count' => $water_count,
+			'smith' => $smith,
+			'lumbermill' => $lumbermill,
+			'mine' => $mine,
+			'farm' => $farm,
+			'well' => $well
 			
 		]);
 
 	}
 
-	public function buttonCount1(){
-
-		//DB::table('buttons')->increment('count', 1, array('id' => 1));
-		if(id == "button1"){
-			DB::table('buttons')
-				->where('id', 1)
-				->increment('count', 1);
-
-			return Redirect::to('/feed');
-		}
-
-		if(id == "button2"){
-			DB::table('buttons')
-				->where('id', 2)
-				->increment('count', 1);
-
-			return Redirect::to('/feed');
-		}
-
-		if(id == "button3"){
-			DB::table('buttons')
-				->where('id', 3)
-				->increment('count', 1);
-
-			return Redirect::to('/feed');
-		}
-
-		if(id == "button4"){
-			DB::table('buttons')
-				->where('id', 4)
-				->increment('count', 1);
-
-			return Redirect::to('/feed');
-		}
-
-		if(id == "button5"){
-			DB::table('buttons')
-				->where('id', 5)
-				->increment('count', 1);
-
-			return Redirect::to('/feed');
-		}
-
-	}
-
-	public function buttonCount2(){
-
-		//DB::table('buttons')->increment('count', 1, array('id' => 1));
-
-		DB::table('buttons')
-			->where('id', 2)
-			->increment('count', 1);
-
-		return Redirect::to('/feed');
-
-	}
-
-	public function buttonCount3(){
-
-		//DB::table('buttons')->increment('count', 1, array('id' => 1));
-
-		DB::table('buttons')
-			->where('id', 3)
-			->increment('count', 1);
-
-		return Redirect::to('/feed');
-
-	}
-
-	public function buttonCount4(){
-
-		//DB::table('buttons')->increment('count', 1, array('id' => 1));
-
-		DB::table('buttons')
-			->where('id', 4)
-			->increment('count', 1);
-
-		return Redirect::to('/feed');
-
-	}
-
-	public function buttonCount5(){
-
-		//DB::table('buttons')->increment('count', 1, array('id' => 1));
-
-		DB::table('buttons')
-			->where('id', 5)
-			->increment('count', 1);
-
-		return Redirect::to('/feed');
-
-	}
+	
 
 }
