@@ -82,11 +82,11 @@
   {{Form::close()}}
   
 <tr>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
+  <td>{{$iron_count}}</td>
+  <td>{{$wood_count}}</td>
+  <td>{{$gold_count}}</td>
+  <td>{{$food_count}}</td>
+  <td>{{$water_count}}</td>
 </tr>
 
 <tr>
@@ -96,12 +96,29 @@
   <th>Farm</th>
   <th>Well</th>
 </tr>
+
 <tr>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
-  <td>0</td>
+  {{Form::open(['action'=> 'SmithController@addSmith', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <td>{{$smith}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  {{Form::close()}} 
+
+  {{Form::open(['action'=> 'MillController@addMill', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <td>{{$lumbermill}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  {{Form::close()}}
+
+  {{Form::open(['action'=> 'MineController@addMine', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <td>{{$mine}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  {{Form::close()}}
+
+
+  {{Form::open(['action'=> 'FarmController@addFarm', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <td>{{$farm}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  {{Form::close()}}
+
+
+  {{Form::open(['action'=> 'WellController@addWell', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+  <td>{{$well}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  {{Form::close()}}
 
 </tr>
 </table>
