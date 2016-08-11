@@ -61,15 +61,6 @@
 				</div>	
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Kingdom Name</label>
-				<div class="col-sm-10">
-						{{Form::text('kingdom_name', null, ['placeholder' => 'Kingdom Name', 'required', 'class' => 'form-control'])}}
-					<!--{{Form::radio('gender', 'male')}} Male
-					<br>
-					{{Form::radio('gender', 'female')}} Female-->
-				</div>	
-			</div>
-			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 				{{ Form:: submit('Sign Up', [ 'class' => 'btn btn-danger btn-block']) }}
 				</div>
