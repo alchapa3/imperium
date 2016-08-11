@@ -36,25 +36,68 @@
     <div class="col-md-8">
       <!--div class="profile"-->
       <!--img src="{{$username->profile_pic}}"-->
-      <h1>Market</h1>
+      <h1><u>Market</u></h1>
     </div>
   </div>
   <p></p>
     <div class="col-md-10">
       <div class="container">
         <div class="form-group">
-          <h3 class="text-center">Nothing In Market</h3>
+          <!--h3 class="text-center">Market is Empty</h3-->
+
+          <div class="posts">
+              @foreach($posts as $post)
+                @if(empty($post))
+                  <h3 class="text-center">Market is Empty</h3>
+                @endif
+                <div class="post">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <p><h3>{{$names[$post->id]}} wants </h3></p>
+                      <p>{{$post->iron1}} iron</p>
+                      <p>{{$post->wood1}} wood</p>
+                      <p>{{$post->gold1}} gold</p>
+                      <p>{{$post->food1}} food</p>
+                      <p>{{$post->water1}} water</p>
+                    </div>
+                    <div class="col-md-3">
+                      <p></p>
+                      <p><h3>Offering</h3></p> 
+                      <p>{{$post->iron2}} iron</p>
+                      <p>{{$post->wood2}} wood</p>
+                      <p>{{$post->gold2}} gold</p>
+                      <p>{{$post->food2}} food</p>
+                      <p>{{$post->water2}} water</p>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="col-xs-12" style="height:80px;"></div>
+                        <a class="btn btn-danger"  href="/market" role="button" >Accept</a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+              @endforeach
+
         </div>
       </div>
     </div>
   <p></p>
   <div class="container">
     <div class=" form-group">
-      <div class="col-md-5 col-sm-offset-4">
+      <div class="col-md-6 col-sm-offset-3">
         <a class="btn btn-danger btn-lg btn-block"  href="/trade" role="button" >Trade in Market</a>
       </div>
     </div>
   </div>
+  <p>
+  <div class="container">
+    <div class=" form-group">
+      <div class="col-md-4 col-sm-offset-5">
+        <a class="btn btn-danger"  href="/feed" role="button" >Go back to Kingdom</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 @stop
