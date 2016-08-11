@@ -54,7 +54,7 @@ Route::get('/gauth/{auth?}',"AuthenticationController@getGoogleLogin");
 //Trade
 Route::get('/market','MarketController@showMarketView');
 
-Route::get('/trade','MarketController@showTradeView');
-Route::post('/trade','MarketController@postTrade');
+Route::get('/trade','TradeController@showTradeView');
+Route::post('/trade','TradeController@postTrade');
 
 
