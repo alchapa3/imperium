@@ -4,6 +4,6 @@ class Button extends Eloquent  {
 
 	protected $table = 'buttons';
 
-	protected $fillable = ['count'];
+	protected $fillable = ['KID','count'];
 
 }
