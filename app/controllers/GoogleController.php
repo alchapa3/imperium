@@ -17,6 +17,48 @@ class GoogleController extends \BaseController{
             ->where('email', $user->email)
             ->update(['kingdom_name' => $kingdom_name]);
 
+
+            DB::table('kingdom')->insert([
+		 			'UID' => $user->id, 
+		 			'iron_count' => 0,
+		 			'wood_count' => 0,
+		 			'gold_count' => 0,
+		 			'food_count' => 0,
+		 			'water_count' => 0,
+		 			'population' => 0
+		 			]);
+
+		 	DB::table('producers')->insert([
+		 			'KID' => $user->id,
+		 			'UID' => $user->id, 
+		 			'smith' => 1,
+		 			'lumbermill' => 1,
+		 			'mine' => 1,
+		 			'farm' => 1,
+		 			'well' => 1
+		 			]);
+
+		 	DB::table('buttons')->insert([
+		 	 		'KID' =>$user->id,
+		 	 		'count' => 0
+		 	 		]);
+		 	DB::table('buttons')->insert([
+		 	 		'KID' =>$user->id,
+		 	 		'count' => 0
+		 	 		]);
+		 	DB::table('buttons')->insert([
+		 	 		'KID' =>$user->id,
+		 	 		'count' => 0
+		 	 		]);
+		 	DB::table('buttons')->insert([
+		 	 		'KID' =>$user->id,
+		 	 		'count' => 0
+		 	 		]);
+		 	DB::table('buttons')->insert([
+		 	 		'KID' =>$user->id,
+		 	 		'count' => 0
+		 	 		]);
+
 		}catch(Exception $e){
 
 			//Errors Log 

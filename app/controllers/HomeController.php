@@ -39,17 +39,17 @@ class HomeController extends BaseController {
 
 		$username = Auth::user();
 
-		$iron_count = DB::table('kingdom')->where('id', 1)->pluck('iron_count');
-		$wood_count = DB::table('kingdom')->where('id', 1)->pluck('wood_count');
-		$gold_count = DB::table('kingdom')->where('id', 1)->pluck('gold_count');
-		$food_count = DB::table('kingdom')->where('id', 1)->pluck('food_count');
-		$water_count = DB::table('kingdom')->where('id', 1)->pluck('water_count');
+		$iron_count = DB::table('kingdom')->where('id', $username->id)->pluck('iron_count');
+		$wood_count = DB::table('kingdom')->where('id', $username->id)->pluck('wood_count');
+		$gold_count = DB::table('kingdom')->where('id', $username->id)->pluck('gold_count');
+		$food_count = DB::table('kingdom')->where('id', $username->id)->pluck('food_count');
+		$water_count = DB::table('kingdom')->where('id', $username->id)->pluck('water_count');
 
-		$smith = DB::table('producers')->where('id', 1)->pluck('smith');
-		$lumbermill = DB::table('producers')->where('id', 1)->pluck('lumbermill');
-		$mine = DB::table('producers')->where('id', 1)->pluck('mine');
-		$farm = DB::table('producers')->where('id', 1)->pluck('farm');
-		$well = DB::table('producers')->where('id', 1)->pluck('well');
+		$smith = DB::table('producers')->where('id', $username->id)->pluck('smith');
+		$lumbermill = DB::table('producers')->where('id', $username->id)->pluck('lumbermill');
+		$mine = DB::table('producers')->where('id', $username->id)->pluck('mine');
+		$farm = DB::table('producers')->where('id', $username->id)->pluck('farm');
+		$well = DB::table('producers')->where('id', $username->id)->pluck('well');
 
 		$kingdom_name = Auth::user();
 

@@ -28,9 +28,7 @@ class RegistrationController extends \BaseController{
 			'email' =>' required|unique:users', 
 			'password' => 'required',
 			'repassword' => 'required',
-			'username'	=> 'required',
-			//'gender'	=> 'required'
-			'kingdom_name' => 'required'
+			'username'	=> 'required'
 		]);
 
 		if($validation->fails()){
@@ -44,58 +42,14 @@ class RegistrationController extends \BaseController{
 		$password = Input::get('password');
 		$repassword = Input::get('repassword');
 		$name = Input::get('username');
-		//$gender = Input::get('gender');
-		$kingdom_name = Input::get('kingdom_name');
 		
 		try{
 
 			User::create([
 				'email'	=> $email,
 				'password'	=> Hash::make($password),
-				'username' => $name,
-				'kingdom_name' => $kingdom_name
+				'username' => $name
 			]);
-
-		 	DB::table('kingdom')->insert([
-		 			'UID' => 1, 
-		 			'iron_count' => 0,
-		 			'wood_count' => 0,
-		 			'gold_count' => 0,
-		 			'food_count' => 0,
-		 			'water_count' => 0,
-		 			'population' => 0
-		 			]);
-
-		 	DB::table('producers')->insert([
-		 			'KID' => 1,
-		 			'UID' => 1, 
-		 			'smith' => 1,
-		 			'lumbermill' => 1,
-		 			'mine' => 1,
-		 			'farm' => 1,
-		 			'well' => 1
-		 			]);
-
-		 	DB::table('buttons')->insert([
-		 	 		'KID' =>1,
-		 	 		'count' => 0
-		 	 		]);
-		 	DB::table('buttons')->insert([
-		 	 		'KID' =>1,
-		 	 		'count' => 0
-		 	 		]);
-		 	DB::table('buttons')->insert([
-		 	 		'KID' =>1,
-		 	 		'count' => 0
-		 	 		]);
-		 	DB::table('buttons')->insert([
-		 	 		'KID' =>1,
-		 	 		'count' => 0
-		 	 		]);
-		 	DB::table('buttons')->insert([
-		 	 		'KID' =>1,
-		 	 		'count' => 0
-		 	 		]);
 
 		}catch(Exception $e){
 
@@ -105,8 +59,9 @@ class RegistrationController extends \BaseController{
 		}
 
 
-		Session::flash('success_message', 'Success! Welcome to Our Facbook');
-		return Redirect::to('/login');
+		if (Auth::attempt(Input::only('email', 'password'), true)){
+			return Redirect::to('/newgoogleuser');
+		}
 		
 
 	}
