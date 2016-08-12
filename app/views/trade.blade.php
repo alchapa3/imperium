@@ -47,9 +47,13 @@
     {{Form::open(['action' => 'TradeController@postTrade', 'method'=> 'POST', 'class' => "form"])}}
     <h3 class="text-center">What do you want?</h3>
       <div class="col-sm-2">
-        <div class="alert alert-danger" role="alert">
-          {{Session::get('error_message')}}
-        </div>
+      
+        @if(Session::has('error_message'))
+          <div class="alert alert-danger" role="alert">
+            {{Session::get('error_message')}}
+          </div>
+        @endif
+
         Iron{{Form::number('iron1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
         <br>
         Wood{{Form::number('wood1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}

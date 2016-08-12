@@ -44,12 +44,18 @@
       <div class="container">
         <div class="form-group">
           <!--h3 class="text-center">Market is Empty</h3-->
+          @if(Session::has('error_message'))
+          <div class="alert alert-danger" role="alert">
+            {{Session::get('error_message')}}
+          </div>
+        @endif
 
           <div class="posts">
               @foreach($posts as $post)
-                @if(empty($post))
+                @if($post == '[]')
                   <h3 class="text-center">Market is Empty</h3>
-                @endif
+                @else
+
                 <div class="post">
                   <div class="row">
                     <div class="col-md-3">
@@ -71,11 +77,20 @@
                     </div>
                     <div class="col-md-1">
                       <div class="col-xs-12" style="height:80px;"></div>
-                        <a class="btn btn-danger"  href="/market" role="button" >Accept</a>
+
+
+                        {{Form::open(['action'=> 'MarketController@acceptTrade', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+                        {{Form::hidden('id', $post->id)}}
+                        <th>{{Form::submit('Accept', ['class' => 'btn btn-danger'])}}</th>
+                        {{Form::close()}}
+
+
+
                       </div>
                     </div>
                   </div>
                   <hr>
+                  @endif
               @endforeach
 
         </div>
