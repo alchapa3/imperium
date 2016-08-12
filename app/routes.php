@@ -37,10 +37,10 @@ Route::post('/farm','FarmController@addFarm');
 Route::post('/well','WellController@addWell');
 
 //Post
-Route::post('/post', 'PostController@createPost');
+//Route::post('/post', 'PostController@createPost');
 
 //Comment
-Route::post('/comment', 'CommentsController@createComment');
+//Route::post('/comment', 'CommentsController@createComment');
 
 //Misc
 Route::get('/users', 'AuthenticationController@showUsers');
@@ -53,6 +53,8 @@ Route::get('/gauth/{auth?}',"AuthenticationController@getGoogleLogin");
 
 //Trade
 Route::get('/market','MarketController@showMarketView');
+Route::post('/market','MarketController@acceptTrade');
+
 
 Route::get('/trade','TradeController@showTradeView');
 Route::post('/trade','TradeController@postTrade');
