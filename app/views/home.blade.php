@@ -99,25 +99,25 @@
 
 <tr>
   {{Form::open(['action'=> 'SmithController@addSmith', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$smith}} {{Form::submit('Upgrade (' .$smith*$smith*10 .')', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$smith}} {{Form::submit('Upgrade (' .$smith*$smith*10 .')', ['class' => 'btn btn-danger', 'id' => 'upSmith'])}}</td>
   {{Form::close()}} 
 
   {{Form::open(['action'=> 'MillController@addMill', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$lumbermill}} {{Form::submit('Upgrade (' .$lumbermill*$lumbermill*10 .')', ['class' => 'btn btn-success'])}}</td>
+  <td>{{$lumbermill}} {{Form::submit('Upgrade (' .$lumbermill*$lumbermill*10 .')', ['class' => 'btn btn-success', 'id' => 'upMill'])}}</td>
   {{Form::close()}}
 
   {{Form::open(['action'=> 'MineController@addMine', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$mine}} {{Form::submit('Upgrade (' .$mine*$mine*10 .')', ['class' => 'btn btn-warning'])}}</td>
+  <td>{{$mine}} {{Form::submit('Upgrade (' .$mine*$mine*10 .')', ['class' => 'btn btn-warning', 'id' => 'upMine'])}}</td>
   {{Form::close()}}
 
 
   {{Form::open(['action'=> 'FarmController@addFarm', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$farm}} {{Form::submit('Upgrade (' .$farm*$farm*10 .')', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$farm}} {{Form::submit('Upgrade (' .$farm*$farm*10 .')', ['class' => 'btn btn-danger', 'id' => 'upFarm'])}}</td>
   {{Form::close()}}
 
 
   {{Form::open(['action'=> 'WellController@addWell', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$well}} {{Form::submit('Upgrade (' .$well*$well*10 .')', ['class' => 'btn btn-primary'])}}</td>
+  <td>{{$well}} {{Form::submit('Upgrade (' .$well*$well*10 .')', ['class' => 'btn btn-primary', 'id' => 'upWell'])}}</td>
   {{Form::close()}}
 
 </tr>
