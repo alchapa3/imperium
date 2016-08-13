@@ -87,7 +87,7 @@
   <div class="container">
     <div class=" form-group">
       <div class="col-md-6 col-sm-offset-3">
-      {{Form::submit('Post',['class' => 'btn btn-default btn-lg btn-block'])}}
+      {{Form::submit('Post',['class' => 'btn btn-default btn-lg btn-block', 'id' => 'post'])}}
       </div>
     </div>
       {{Form::close()}}
