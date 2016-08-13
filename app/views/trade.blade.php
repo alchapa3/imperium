@@ -66,7 +66,7 @@
       </div>  
     </div>
   </div>
-  <hr>
+  <hr></hr>
   <div class="container">
     <div class="form-group">
       <h3 class="text-center">What are you offering?</h3>
