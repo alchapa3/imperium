@@ -63,7 +63,14 @@
         Food{{Form::number('food1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control', 'min' => 0, 'id' => 'food1'])}}
         <br>
         Water{{Form::number('water1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control', 'min' => 0, 'id' => 'water1'])}}
-     
+      </div>  
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="form-group">
+      <h3 class="text-center">What are you offering?</h3>
+        <div class="col-sm-2">
           Iron{{Form::number('iron2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0, 'id' => 'iron2'])}}
           <br>
           Wood{{Form::number('wood2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0, 'id' => 'wood2'])}}
@@ -73,11 +80,17 @@
           Food{{Form::number('food2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0, 'id' => 'food2'])}}
           <br>
           Water{{Form::number('water2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0, 'id' => 'water2'])}}
+        </div>  
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class=" form-group">
+      <div class="col-md-6 col-sm-offset-3">
       {{Form::submit('Post',['class' => 'btn btn-default btn-lg btn-block', 'id' => 'post'])}}
-        {{Form::close()}}
       </div>
     </div>
-    
+      {{Form::close()}}
   </div>
   <p>
   <div class="container">
