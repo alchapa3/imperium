@@ -16,8 +16,6 @@ Route::post('/signup', 'RegistrationController@signUp');
 Route::get('/newgoogleuser', 'GoogleController@showGoogleView');
 Route::post('/newgoogleuser', 'GoogleController@addGoogleUser');
 
-//Feed
-//Route::get('/feed', 'FeedController@showFeed');
 
 //Home
 Route::get('/feed', 'HomeController@showHome');
@@ -36,11 +34,6 @@ Route::post('/mine','MineController@addMine');
 Route::post('/farm','FarmController@addFarm');
 Route::post('/well','WellController@addWell');
 
-//Post
-//Route::post('/post', 'PostController@createPost');
-
-//Comment
-//Route::post('/comment', 'CommentsController@createComment');
 
 //Misc
 Route::get('/users', 'AuthenticationController@showUsers');
