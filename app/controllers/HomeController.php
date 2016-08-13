@@ -51,6 +51,8 @@ class HomeController extends BaseController {
 		$farm = DB::table('producers')->where('id', $username->id)->pluck('farm');
 		$well = DB::table('producers')->where('id', $username->id)->pluck('well');
 
+		$population = DB::table('kingdom')->where('UID', $username->id)->pluck('population');
+
 		$kingdom_name = Auth::user();
 
 		return View::make('home', [
@@ -65,7 +67,8 @@ class HomeController extends BaseController {
 			'lumbermill' => $lumbermill,
 			'mine' => $mine,
 			'farm' => $farm,
-			'well' => $well
+			'well' => $well,
+			'population' => $population
 			
 		]);
 

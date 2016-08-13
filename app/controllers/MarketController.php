@@ -5,8 +5,7 @@ class MarketController extends BaseController {
 	public function showMarketView(){
 		$username = Auth::user();
 
-		$posts = Trade::all();
-
+		$posts = Trade::where('posterID','!=', $username->id)->get();
 		
 		if($posts == '[]'){
 			return View::make('market', [
