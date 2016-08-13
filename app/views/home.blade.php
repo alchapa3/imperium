@@ -66,19 +66,19 @@
   {{Form::close()}}
 
   {{Form::open(['action'=> 'ButtonController2@buttonCount2', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <th>Wood {{Form::submit('+', ['class' => 'btn btn-success'])}}</th>
+  <th>Wood {{Form::submit('+', ['class' => 'btn btn-success', 'id' => 'button2' ])}}</th>
   {{Form::close()}}
   
   {{Form::open(['action'=> 'ButtonController3@buttonCount3', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <th>Gold {{Form::submit('+', ['class' => 'btn btn-warning'])}}</th>
+  <th>Gold {{Form::submit('+', ['class' => 'btn btn-warning', 'id' => 'button3'])}}</th>
   {{Form::close()}}
 
   {{Form::open(['action'=> 'ButtonController4@buttonCount4', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <th>Food {{Form::submit('+', ['class' => 'btn btn-danger'])}}</th>
+  <th>Food {{Form::submit('+', ['class' => 'btn btn-danger', 'id' => 'button4'])}}</th>
   {{Form::close()}}
 
   {{Form::open(['action'=> 'ButtonController5@buttonCount5', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <th>Water {{Form::submit('+', ['class' => 'btn btn-primary'])}}</th>
+  <th>Water {{Form::submit('+', ['class' => 'btn btn-primary', 'id' => 'button5'])}}</th>
   {{Form::close()}}
   
 <tr>
