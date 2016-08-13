@@ -54,15 +54,15 @@
           </div>
         @endif
 
-        Iron{{Form::number('iron1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+        Iron{{Form::number('iron1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control','min' => 0])}}
         <br>
-        Wood{{Form::number('wood1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+        Wood{{Form::number('wood1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control','min' => 0])}}
         <br>
-        Gold{{Form::number('gold1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control', 'min' => 0])}}
+        Gold{{Form::number('gold1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control', 'min' => 0])}}
         <br>
-        Food{{Form::number('food1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control', 'min' => 0])}}
+        Food{{Form::number('food1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control', 'min' => 0])}}
         <br>
-        Water{{Form::number('water1', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control', 'min' => 0])}}
+        Water{{Form::number('water1', null, [ 'placeholder' => '# To Receive', 'required', 'class' => 'form-control', 'min' => 0])}}
       </div>  
     </div>
   </div>
@@ -71,15 +71,15 @@
     <div class="form-group">
       <h3 class="text-center">What are you offering?</h3>
         <div class="col-sm-2">
-          Iron{{Form::number('iron2', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+          Iron{{Form::number('iron2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0])}}
           <br>
-          Wood{{Form::number('wood2', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+          Wood{{Form::number('wood2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0])}}
           <br>
-          Gold{{Form::number('gold2', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+          Gold{{Form::number('gold2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0])}}
           <br>
-          Food{{Form::number('food2', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+          Food{{Form::number('food2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0])}}
           <br>
-          Water{{Form::number('water2', null, [ 'placeholder' => '# To Trade', 'required', 'class' => 'form-control','min' => 0])}}
+          Water{{Form::number('water2', null, [ 'placeholder' => '# To Give', 'required', 'class' => 'form-control','min' => 0])}}
         </div>  
     </div>
   </div>
@@ -87,7 +87,7 @@
   <div class="container">
     <div class=" form-group">
       <div class="col-md-6 col-sm-offset-3">
-      {{Form::submit('Post',['class' => 'btn btn-danger btn-lg btn-block'])}}
+      {{Form::submit('Post',['class' => 'btn btn-default btn-lg btn-block'])}}
       </div>
     </div>
       {{Form::close()}}
@@ -96,7 +96,7 @@
   <div class="container">
     <div class=" form-group">
       <div class="col-md-4 col-sm-offset-5">
-        <a class="btn btn-danger"  href="/feed" role="button" >Go back to Kingdom</a>
+        <a class="btn btn-danger"  href="/feed" role="button" >Back to Kingdom</a>
       </div>
     </div>
   </div>

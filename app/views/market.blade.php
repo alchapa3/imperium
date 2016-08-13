@@ -100,7 +100,7 @@
   <div class="container">
     <div class=" form-group">
       <div class="col-md-6 col-sm-offset-3">
-        <a class="btn btn-danger btn-lg btn-block"  href="/trade" role="button" >Trade in Market</a>
+        <a class="btn btn-default btn-lg btn-block"  href="/trade" role="button" >Trade in Market</a>
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@
   <div class="container">
     <div class=" form-group">
       <div class="col-md-4 col-sm-offset-5">
-        <a class="btn btn-danger"  href="/feed" role="button" >Go back to Kingdom</a>
+        <a class="btn btn-danger"  href="/feed" role="button" >Back to Kingdom</a>
       </div>
     </div>
   </div>

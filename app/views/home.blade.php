@@ -38,7 +38,7 @@
           <!--div class="profile"-->
               <!--img src="{{$username->profile_pic}}"-->
                <h1>{{$kingdom_name->kingdom_name}}</h1>
-               <h3>Population - 0</h3>
+               <h3>Population - {{$population}}</h3>
           </div>
       </div>
 
@@ -99,25 +99,25 @@
 
 <tr>
   {{Form::open(['action'=> 'SmithController@addSmith', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$smith}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$smith}} {{Form::submit('Upgrade (' .$smith*$smith*10 .')', ['class' => 'btn btn-danger'])}}</td>
   {{Form::close()}} 
 
   {{Form::open(['action'=> 'MillController@addMill', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$lumbermill}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$lumbermill}} {{Form::submit('Upgrade (' .$lumbermill*$lumbermill*10 .')', ['class' => 'btn btn-success'])}}</td>
   {{Form::close()}}
 
   {{Form::open(['action'=> 'MineController@addMine', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$mine}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$mine}} {{Form::submit('Upgrade (' .$mine*$mine*10 .')', ['class' => 'btn btn-warning'])}}</td>
   {{Form::close()}}
 
 
   {{Form::open(['action'=> 'FarmController@addFarm', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$farm}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$farm}} {{Form::submit('Upgrade (' .$farm*$farm*10 .')', ['class' => 'btn btn-danger'])}}</td>
   {{Form::close()}}
 
 
   {{Form::open(['action'=> 'WellController@addWell', 'method' => 'POST', 'class' => 'form-horizontal'])}}
-  <td>{{$well}} {{Form::submit('upgrade', ['class' => 'btn btn-danger'])}}</td>
+  <td>{{$well}} {{Form::submit('Upgrade (' .$well*$well*10 .')', ['class' => 'btn btn-primary'])}}</td>
   {{Form::close()}}
 
 </tr>
@@ -126,7 +126,9 @@
 
 
   <div class=" form-group">
-      <a class="btn btn-danger btn-lg btn-block"  href="/market" role="button" >Market</a>
+    <div class="col-md-6 col-sm-offset-3">
+      <a class="btn btn-default btn-lg btn-block"  href="/market" role="button" >Market</a>
+    </div>
   </div>
 
 </div>
